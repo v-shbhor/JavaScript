@@ -1,0 +1,13 @@
+﻿<script type="text/javascript">
+    //closure functions 
+    var incrementclickcount = (function ()
+    {
+        var clickCount = 0;
+        return function(){
+            return ++clickCount;
+        }
+        
+    })();
+    
+</script>
+<input type="button" value="click me" onclick="alert(incrementclickcount());"/>
