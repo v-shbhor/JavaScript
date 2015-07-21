@@ -1,0 +1,30 @@
+﻿<img src="/images/1.jpg" id="image" style="height:200px; width:200px" />
+<br />
+<input type="button" value="Start Slide Show" onclick="startslideshow()"/>
+<input type="button" value="Stop Slide Show" onclick="stopslideshow()"/>
+<br />
+
+<script>
+    var intervalid;
+    function startslideshow()
+    {
+        intervalid = setInterval(changeimage, 500);
+    }
+    function stopslideshow()
+    {
+        clearInterval(intervalid);
+    }
+    function changeimage()
+    {
+        var imagesrc = document.getElementById("image").getAttribute("src");
+        //this will get the current img no i.e 1
+        var currentimgno = imagesrc.substring(imagesrc.lastIndexOf("/") + 1, imagesrc.lastIndexOf("/") + 2);
+        if (currentimgno == 3)
+        {
+            currentimgno = 0;
+        }
+        
+        document.getElementById("image").setAttribute("src","/images/"+(Number(currentimgno)+1) + ".jpg")
+    }
+
+</script>

@@ -1,0 +1,56 @@
+﻿<input type="button" value="click me" id="bttn" 
+       onmouseover="changecoloronmouseover()"
+    onmouseout="changecoloronmouseout()"/>
+<br />
+<input type="button" value="DOM" id="bttn1" />
+<br />
+<input type="button" value="Addeventlistener" id="bttn2" />
+<br/>
+<input type="button" value="removeeventlistener" onclick="removehandlers()"/>
+
+<script type="text/javascript">
+    document.getElementById("bttn1").onmouseover = changecoloronmouseover1;
+    document.getElementById("bttn1").onmouseout = changecoloronmouseout1;
+    bttn2.addEventListener("mouseover", changecoloronmouseover2, false);
+    bttn2.addEventListener("mouseout", changecoloronmouseout2, false);
+
+    function removehandlers()
+    {
+        bttn2.removeEventListener("mouseover", changecoloronmouseover2);
+        bttn2.removeEventListener("mouseover", changecoloronmouseout2);
+    }
+    function changecoloronmouseover()
+    {
+        var control = document.getElementById("bttn");
+        control.style.background = 'red';
+        control.style.color = 'yellow';
+    }
+    function changecoloronmouseout() {
+        var control = document.getElementById("bttn");
+        control.style.background = 'black';
+        control.style.color = 'white';
+    }
+
+    function changecoloronmouseover1() {
+        var control = document.getElementById("bttn1");
+        control.style.background = 'red';
+        control.style.color = 'yellow';
+    }
+    function changecoloronmouseout1() {
+        var control = document.getElementById("bttn1");
+        control.style.background = 'black';
+        control.style.color = 'white';
+    }
+
+    function changecoloronmouseover2() {
+        
+       this.style.background = 'red';
+        this.style.color = 'yellow';
+    }
+    function changecoloronmouseout2() {
+        
+        this.style.background = 'black';
+        this.style.color = 'white';
+    }
+   
+</script>

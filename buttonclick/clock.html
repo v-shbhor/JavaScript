@@ -1,0 +1,41 @@
+﻿<div id="timediv"></div>
+<input type="text" value="10" id="txtbox"/>
+<br />
+<input type="button" value="startclock" onclick="starttimer('txtbox')" />
+<input type="button" value="stopclock" onclick="stoptimer('txtbox')"/>
+
+<script type="text/javascript">
+    var intervalid;
+   /* function startclock() {
+       intervalid = setInterval(getcurrentdatetime, 1000);
+    }
+
+    function stopclock() {
+        clearInterval(intervalid);
+    }
+    function getcurrentdatetime() 
+    {
+        document.getElementById("timediv").innerHTML = new Date();
+    } */
+    function starttimer(controlid)
+    {
+        var control = document.getElementById(controlid);
+        var seconds = control.value;
+        seconds = seconds - 1;
+        if(seconds == 0)
+        {
+            control.value = "Done";
+            return;
+        }
+        else {
+            control.value = seconds;
+        }
+        intervalid = setTimeout(function () { starttimer("txtbox") }, 1000);
+    }
+
+    function stoptimer()
+    {
+        clearTimeout(intervalid);
+    }
+</script>
+    
