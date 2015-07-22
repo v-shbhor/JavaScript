@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+<style type="text/css">
+    .styleclass
+    {
+        display:table-cell;
+        border:5px solid black;
+        padding:20px;
+        text-align:center;
+    }
+</style>
+    
+</head>
+<body>
+    <div id="DIV1" class="styleclass">
+        DIV 1
+        <div id="DIV2" class="styleclass">
+            DIV 2
+            <div id="DIV3" class="styleclass">
+                DIV 3
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var divelements = document.getElementsByTagName('div');
+        //for(var i =0;i < divelements.length;i++)
+        //{
+        //    divelements[i].onclick = function ()
+        //    {
+        //        this.style.borderColor = 'red';
+        //        alert(this.getAttribute("id") + " border color changed");
+        //    }
+        //}
+
+        /* To stop propagation of event bubbling the following code is used */
+        for(var i =0;i < divelements.length;i++)
+       {
+           divelements[i].onclick = function (event)
+           {
+               event = event || window.event;
+               if (event.stopPropagation)
+               {
+                   event.stopPropagation()
+               }
+               else {
+                   event.cancelBubble = true;
+               }
+                this.style.borderColor = 'red';
+                alert(this.getAttribute("id") + " border color changed");
+            }
+        }
+    </script>
+</body>
+</html>

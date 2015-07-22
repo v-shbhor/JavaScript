@@ -1,0 +1,72 @@
+﻿<input type="text" id="txtbox" style="width: 250px" />
+<br /> <br />
+<input type="button" value="Process string" onclick="processstring()" style="width: 250px" />
+<br /> <br />
+<input type="button" value="Replace no to XXX" onclick="replaceno()" style="width: 250px" />
+<br /> <br />
+<input type="button" value="split" onclick="split()" style="width: 250px" />
+<br /> <br />
+<input type="button" value="search" onclick="search()" style="width: 250px" />
+<br /> <br />
+<input type="button" value="duplicatesoftom" onclick="duplicates()" style="width: 250px" />
+<br /> <br />
+
+<textarea id="txtarea" rows="4" cols="40"></textarea>
+<script type="text/javascript">
+
+       function processstring() {
+        var inputstring = document.getElementById("txtbox").value;
+        // '\d+' represents all digit occurences and 'g' represents scan for the whole string
+        var result = inputstring.match(/\d+/g);
+        if (result != null) {
+            for (var i = 0; i < result.length;i++){
+                document.getElementById("txtarea").value += result[i] + "\r\n";
+            }
+           
+        }
+    }
+
+        function replaceno() {
+            var inputstring = document.getElementById("txtbox").value;
+            var result = inputstring.replace(/\d+/g, "XXX");
+            document.getElementById("txtarea").value = result;
+           
+        }
+
+        function split() {
+            var inputstring = document.getElementById("txtbox").value;
+            var result = inputstring.split(/\d+/g);
+            document.getElementById("txtarea").value = result;
+
+        }
+
+        function search() {
+            var inputstring = document.getElementById("txtbox").value;
+            var result = inputstring.search(/\d+/);
+            document.getElementById("txtarea").value = result;
+        }
+
+        function duplicates() {
+                var inputstring = document.getElementById("txtbox").value;
+                var result = inputstring.match(/tom/gi);
+                document.getElementById("txtarea").value = result;
+
+        }
+    //above 5 function use regular exp literals below we will uuse a constructor function
+
+        
+      /*  function replacenousingregexconstructor() {
+            var inputstring = document.getElementById("txtbox").value;
+            var regexp = new regexp("\\d+", "g");
+            var result;
+            while((result = regexp.exec(inputstring)) != null) {
+            document.write(result[0] + "<br/>);
+            }
+            //document.write(regexp.exec(inputstring));
+            // the test method regexp.test(string) returns true or false
+            // we can use the test and exec method on regexp created with literals
+            //regular expressions can be done to help validate email format is correct or  not at client side itself
+        }*/
+        
+
+</script>

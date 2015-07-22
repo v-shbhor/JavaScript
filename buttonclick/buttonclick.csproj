@@ -68,11 +68,19 @@
   <ItemGroup>
     <Content Include="Date-Closure.html" />
     <Content Include="clock.html" />
+    <Content Include="eventbubbling.html" />
     <Content Include="Events.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
+    <Content Include="imagethumbnail.html" />
+    <Content Include="JSProperties.html" />
+    <Content Include="namespace-private-publicfunc.html" />
+    <Content Include="regexforemailvalidation.html" />
+    <Content Include="regularexpression.html" />
     <Content Include="slideshow.html" />
+    <Content Include="teama.js" />
+    <Content Include="teamb.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

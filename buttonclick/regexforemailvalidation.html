@@ -1,0 +1,17 @@
+﻿email : <input type="text" id="txtemail" onkeyup="validateemail()"/>
+<script type="text/javascript">
+    function validateemail() {
+        var emailtxtbox = document.getElementById("txtemail");
+        var email = emailtxtbox.value;
+        var emailregex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+        emailtxtbox.style.color = "white";
+        if (emailregex.test(email)) {
+            emailtxtbox.style.backgroundColor = "green";
+        }
+        else
+        {
+            emailtxtbox.style.backgroundColor = "red";
+        }
+
+    }
+</script>

@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <script type="text/javascript" src="teama.js"></script>
+    <script type="text/javascript" src="teamb.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        function employee(fname,lname){
+            //public fields
+            this.fname = fname;
+            this.lname = lname;
+            //private field are created using the var keyword
+            var privatefname;
+            //private function
+            var privategetfullname = function () {
+                privatefname = fname + "" + lname;
+                return privatefname;
+
+            }
+
+            //priveledged function we use this keyword
+            //can access private fields and function
+            this.priviledgedfullname = function () {
+                return privategetfullname();
+            }
+
+            //public function we use prototype properpty of the constructor function
+            //can call priveledged methods but no private methods
+            employee.prototype.publicgetfullname = function () {
+                return this.priviledgedfullname();
+            }
+
+        }
+
+        var employee = new employee("tom", "grover");
+        document.write(employee.publicgetfullname() + "<br />");
+        document.write(employee.priviledgedfullname() + "<br />");
+   //     employee.privategetfullname(); //this will fail
+  //      employee.privatefname; //this hsould fail
+
+
+    alert(window.mindtree.teama.customer("tom","grover").getfullname());
+    alert(window.mindtree.teamb.customer("tom","D","grover").getfullname());
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .imgstyle
+        {
+            height:150px;
+            width:150px;
+            border:3px solid grey;
+        }
+    </style>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <img height="540px" width="540px" style="border:3px solid grey"
+         src="images/1.jpg" id="mainimage" />
+    <br />
+    <div id="mydiv" onclick="changeimage(event)">
+        <img class="imgstyle" src="images/1.jpg" />
+        <img class="imgstyle" src="images/2.jpg" />
+        <img class="imgstyle" src="images/3.jpg" />
+    </div>
+    <script type="text/javascript">
+        var images = document.getElementById("mydiv").getElementsByTagName("IMG");
+        for (var i = 0; i < images.length; i++) {
+            images[i].onmouseover = function(){
+                this.style.cursor = 'hand';
+                this.style.bordercolor = 'red';
+            }
+            images[i].onmouseout = function () {
+                this.style.cursor = 'pointer';
+                this.style.bordercolor = 'grey';
+            }
+        }
+
+        function changeimage(event) {
+            event = event || window.event //compatibiilty for IE8 and earlier versions
+            var targetelement = event.target || event.srcElement; //we are using the targetelement conatins the img elemento n which the click event occured
+            if (targetelement.tagName == "IMG") { //this is to avoid a blank display incase user clicks anywhere in between thr thumbnails
+                document.getElementById("mainimage").src = targetelement.getAttribute("src")
+            }
+        }
+    </script>
+</body>
+</html>
