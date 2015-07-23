@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <script src="employeescript.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //overriding alert window
+        var alert = function (msg) {
+            document.write(msg);
+        }
+
+        alert("hello");
+
+        getemployeedetails();
+        function getemployeedetails() {
+            employee.prototype.getname = function () {
+                return this.name.toUpperCase();
+            }
+            //function overriding the reusable function in employeescript
+            var e1 = new employee("Mark");
+            var e2 = new employee("Henry");
+            document.write("e2.name = " + e2.getname());
+            document.write("e1.name = " + e1.getname());
+                       
+        }
+
+
+    </script>
+</body>
+</html>

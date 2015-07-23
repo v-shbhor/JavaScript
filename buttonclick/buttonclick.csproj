@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Date-Closure.html" />
     <Content Include="clock.html" />
+    <Content Include="employeescript.js" />
     <Content Include="eventbubbling.html" />
     <Content Include="Events.html" />
     <Content Include="images\1.jpg" />
@@ -76,6 +77,7 @@
     <Content Include="imagethumbnail.html" />
     <Content Include="JSProperties.html" />
     <Content Include="namespace-private-publicfunc.html" />
+    <Content Include="prototype-overide.html" />
     <Content Include="regexforemailvalidation.html" />
     <Content Include="regularexpression.html" />
     <Content Include="slideshow.html" />
