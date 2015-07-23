@@ -1,0 +1,16 @@
+﻿<select id="ddlTheme" onchange="="selectcolor()">
+
+    <option value="Select color">Select Color</option>
+    <option value="red">RED</option>
+    <option value="green">GREEN</option>
+    <option value="black">BLACK</option>
+</select>
+<script type="text/javascript">
+    function selectcolor(){
+        var selectedcolor = document.getElementById("ddlTheme").value;
+        if(selectedcolor != 'Select Color')
+        {
+            document.bgColor = selectedcolor;
+        }
+    }
+</script>
