@@ -67,11 +67,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="abstract.html" />
+    <Content Include="cookie-mul-namevaluepair.html" />
+    <Content Include="cookieattribPage3.html" />
     <Content Include="Date-Closure.html" />
     <Content Include="clock.html" />
     <Content Include="employeescript.js" />
     <Content Include="eventbubbling.html" />
     <Content Include="Events.html" />
+    <Content Include="Home\Page2.html" />
+    <Content Include="Home\Subfolder\Page1.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />

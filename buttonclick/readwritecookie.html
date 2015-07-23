@@ -1,4 +1,4 @@
-﻿<select id="ddlTheme" onchange="="selectcolor()">
+﻿<select id="ddlTheme" onchange="setcolorcookie()">
 
     <option value="Select color">Select Color</option>
     <option value="red">RED</option>
@@ -6,11 +6,21 @@
     <option value="black">BLACK</option>
 </select>
 <script type="text/javascript">
-    function selectcolor(){
+    window.onload = function () {
+        if (document.cookie.length != 0) {
+            var namevaluearray = document.cookie.split("=");
+            document.bgColor = namevaluearray[1];
+            document.getElementById("ddlTheme").value = namevaluearray[1];
+        }
+    }
+    function setcolorcookie() {
         var selectedcolor = document.getElementById("ddlTheme").value;
         if(selectedcolor != 'Select Color')
         {
             document.bgColor = selectedcolor;
+            //here we are using the expires on attrib for the cookie
+            document.cookie = "color=" + selectedcolor + ";expires=Fri,5 aug 2016 01:00:00 UTC;";
+
         }
     }
 </script>

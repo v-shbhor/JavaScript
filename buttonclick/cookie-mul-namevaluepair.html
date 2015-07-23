@@ -1,0 +1,70 @@
+﻿<html>
+<head></head>
+<body>
+    <table border="1">
+        <tr>
+            <td>name</td>
+            <td><input type="text" id="txtname"</td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td><input type="text" id="txtemail"></td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td><input type="text" id="txtgender"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="set cookie" onclick="setcookie()"/>
+                <input type="button" value="get cookie" onclick="getcookie()"/>
+                <input type="button" value="clear cookie" onclick="cleartextbox()"/>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function setcookie() {
+            //The below commented code will return only one key value pair that is name and its value
+            //this is default behaviour. 
+        /*    var cookiestring = "name=" + document.getElementById("txtname").value +
+                ";email=" + document.getElementById("txtemail").value +
+                ";gender=" + document.getElementById("txtgender").value;
+            document.cookie = cookiestring; */
+             
+
+            //To store more than 2 key-value pair we have 2 options
+            //1. create a custom object , serialize the object to a JSON string and 
+            //store the serialized string in a cookie
+            //2.use a different cookie for each key-value pair
+            
+
+            //Method 1
+            var customeobject = {};
+            customeobject.name = document.getElementById("txtname").value;
+            customeobject.email = document.getElementById("txtemail").value;
+            customeobject.gender = document.getElementById("txtgender").value;
+
+            var jsonstring = JSON.stringify(customeobject);
+            document.cookie = "cookieobject=" + jsonstring;
+        }
+
+        function getcookie() {
+           
+            //above commented code for single key value pair getcookie code below
+            /* alert(document.cookie); */
+            //for method 1 to store multi cookie we will use the below code to retrieve the values
+            var namevaluearray = document.cookie.split("=");
+            var customeobject = JSON.parse(namevaluearray[1]);
+            document.getElementById("txtname").value = customeobject.name;
+            document.getElementById("txtemail").value = customeobject.email;
+            document.getElementById("txtgender").value = customeobject.gender;
+        }
+
+        function cleartextbox() {
+            document.getElementById("txtname").value = "";
+            document.getElementById("txtemail").value = "";
+            document.getElementById("txtgender").value = "";
+        }
+    </script>
+</body>
+</html>

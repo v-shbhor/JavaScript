@@ -1,0 +1,20 @@
+﻿<input type="button" value="set cookie" onclick="setcookie()" />
+<input type="button" value="get cookie" onclick="getcookie()" />
+<script type="text/javascript">
+    function setcookie() {
+        //here we are using the max-age on attrib for the cookie
+        //to use cookie for a domain you could specify domain=pragimtech.com
+        document.cookie = "color=red;max-age=" + (60 * 60 * 24 * 30) + ";"
+    }
+    function getcookie() {
+        if (document.cookie.length != 0) {
+            var namevaluearray = document.cookie.split("=");
+            alert("name = " + namevaluearray[0] + " value = " + namevaluearray[1]);
+        }
+        else
+        {
+            alert("Cookie not found");
+        }
+    }
+</script>
+

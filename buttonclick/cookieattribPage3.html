@@ -1,0 +1,24 @@
+﻿<input type="button" value="set cookie" onclick="setcookie()"/>
+<input type="button" value="get cookie" onclick="getcookie()"/>
+<script type="text/javascript">
+    function setcookie() {
+        //here we are using the max-age on attrib for the cookie
+        //to use cookie for a domain you could specify domain=pragimtech.com
+        document.cookie = "color=red;max-age=" + (60 * 60 * 24 * 30) + ";"
+        //to update a cookie use the same name but a new value
+        //to delete a cookie set max - age to a negative value
+        //cookie limitations size , cookie limitations per domain - all these depend on the browser visit http://browsercookielimits.squawky.net
+
+    }
+    function getcookie() {
+        if (document.cookie.length != 0) {
+            var namevaluearray = document.cookie.split("=");
+            alert("name = " + namevaluearray[0] + " value = " + namevaluearray[1]);
+        }
+        else
+        {
+            alert("Cookie not found");
+        }
+    }
+</script>
+
