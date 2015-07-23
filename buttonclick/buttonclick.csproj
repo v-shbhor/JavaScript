@@ -66,6 +66,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="abstract.html" />
     <Content Include="Date-Closure.html" />
     <Content Include="clock.html" />
     <Content Include="employeescript.js" />
@@ -78,6 +79,7 @@
     <Content Include="inheritance.html" />
     <Content Include="JSProperties.html" />
     <Content Include="namespace-private-publicfunc.html" />
+    <Content Include="polymorphism.html" />
     <Content Include="prototype-overide.html" />
     <Content Include="regexforemailvalidation.html" />
     <Content Include="regularexpression.html" />

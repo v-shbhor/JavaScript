@@ -1,0 +1,23 @@
+﻿
+<script type="text/javascript">
+    var shape = function () {}
+    shape.prototype.draw = function(){
+        return "i am a generic shape";
+    }
+
+    var circle = function () { }
+    circle.prototype = Object.create(shape.prototype);
+    circle.prototype.draw = function () {
+        return "i am a circle";
+    }
+    
+    var triangle = function () { }
+    triangle.prototype = object.create(shape.prototype);
+
+    var shapes = [new shape(), new circle(), new triangle()];
+    
+    shapes.foreach(function (shape) {
+        document.write(shape.draw() + "<br />");
+    });
+
+</script>

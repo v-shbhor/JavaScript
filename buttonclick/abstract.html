@@ -1,0 +1,24 @@
+﻿<script type="text/javascript">
+    var shape = function()
+    {
+        this.shapename = "none";
+        throw new error("cannot create an instance of abstract cl;ass");
+    }
+
+    shape.prototype.draw = function () {
+        return "drawing" + this.shapename;
+    }
+
+    //var shape = new shape(); this line will throw an error
+    var circle = function(shapename)
+    {
+        this.shapename = shapename;
+    }
+    //shape is going to be the base type of circle
+    circle.prototype = Object.create(shape.prototype);
+
+    var circle = new circle("circle");
+    document.write(circle.draw());
+    alert(circle instanceof circle);
+    alert(circle instanceof shape);
+</script>
