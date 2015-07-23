@@ -1,0 +1,51 @@
+﻿<script type="text/javascript">
+    var employee = function(fname,lname,gender,email)
+    {
+        this.fname = fname;
+        this.lname = lname;
+        this.gender = gender;
+        this.email = email;
+    }
+    employee.prototype.getfullname = function () {
+        return this.fname + " " + this.lname;
+    }
+
+    employee.prototype.getemail = function () {
+        return this.email;
+    }
+
+
+    employee.prototype.getgender = function () {
+        return this.gender;
+    }
+
+    var employee = new employee("mark", "bhor", "male", "abd@ad.com");
+
+
+    var permanentemployee = function (annulsal) {
+        this.annulsal = annulsal;
+    }
+
+    //lets inherit from employee obj 
+    permanentemployee.prototype = employee;
+    var pe = new permanentemployee(10000);
+    for (var property in pe) {
+        document.write(property + ":" + pe[property] + "<br/>");
+    }
+
+
+
+    for (var property in employee)
+    {
+        document.write(property + ":" +employee[property] + "<br/>");
+    }
+
+    //to retrieve only public property
+    for (var property in employee) {
+        if(typeof employee[property] != "function")
+        document.write(property + ":" + employee[property] + "<br/>");
+    }
+    
+
+
+</script>

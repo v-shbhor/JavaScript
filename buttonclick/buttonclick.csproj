@@ -81,6 +81,7 @@
     <Content Include="namespace-private-publicfunc.html" />
     <Content Include="polymorphism.html" />
     <Content Include="prototype-overide.html" />
+    <Content Include="reflection.html" />
     <Content Include="regexforemailvalidation.html" />
     <Content Include="regularexpression.html" />
     <Content Include="slideshow.html" />
