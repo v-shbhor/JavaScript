@@ -75,6 +75,7 @@
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
     <Content Include="imagethumbnail.html" />
+    <Content Include="inheritance.html" />
     <Content Include="JSProperties.html" />
     <Content Include="namespace-private-publicfunc.html" />
     <Content Include="prototype-overide.html" />

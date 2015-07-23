@@ -1,0 +1,22 @@
+﻿<script type="text/javascript">
+    var employee = function (name) {
+        this.name = name;
+    }
+    employee.prototype.getname = function()
+    {
+        return this.name;
+    }
+
+    var permanentemployee = function (annualsal) {
+        this.annualsal = annualsal;
+    }
+
+    var employee = new employee("mark");
+    //here employee is going to be parent for permanent employee
+    permanentemployee.prototype = employee;
+    //so permanentemployee and employee are related through ionheritance
+    //so permanentemployee can now access the name function now
+    var pe = new permanentemployee(50000);
+    //calling a function from employee
+    document.write(pe.getname());
+</script>
